@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#172b38">
+<title>Antel Hayat - Murree is Calling!</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+ margin:0;
+ background:#142b38;
+ color:#fff;
+ font-family:'DM Sans',sans-serif;
+ overflow-x:hidden;
+}
+
+body:before{
+ content:"";
+ position:fixed;
+ inset:0;
+ z-index:-3;
+ background:url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=2200&q=90') center/cover;
+}
+
+body:after{
+ content:"";
+ position:fixed;
+ inset:0;
+ z-index:-2;
+ background:linear-gradient(180deg,rgba(9,27,39,.4),rgba(10,30,42,.68),rgba(10,26,37,.9));
+ pointer-events:none;
+}
+
+nav{
+ position:absolute;
+ top:0;
+ width:100%;
+ padding:25px 6%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ z-index:5;
+}
+
+.brand{
+ font-family:'Playfair Display',serif;
+ font-size:21px;
+ font-style:italic;
+}
+
+.brand span{color:#ffb6a2}
+
+.nav-note{
+ font-size:11px;
+ letter-spacing:3px;
+ text-transform:uppercase;
+}
+
+section{
+ max-width:1240px;
+ margin:auto;
+ padding:110px 24px;
+}
+
+.hero{
+ min-height:112vh;
+ display:grid;
+ place-items:center;
+ text-align:center;
+ padding:145px 24px 90px;
+}
+
+.hero-inner{max-width:900px}
+
+.stamp{
+ display:inline-block;
+ padding:12px 20px;
+ border:1px solid #ffffff75;
+ border-radius:99px;
+ background:#ffffff19;
+ backdrop-filter:blur(10px);
+ font-size:11px;
+ letter-spacing:3px;
+ text-transform:uppercase;
+}
+
+h1,h2,h3{
+ font-family:'Playfair Display',serif;
+ font-weight:600;
+}
+
+h1{
+ font-size:clamp(62px,10vw,124px);
+ line-height:.99;
+ margin:28px 0 22px;
+ text-shadow:0 6px 35px #081b2b80;
+}
+
+h1 em{color:#ffd1bd}
+
+.hero p{
+ max-width:650px;
+ margin:auto;
+ color:#edf5f2;
+ font-size:19px;
+ line-height:1.8;
+}
+
+.actions{
+ display:flex;
+ justify-content:center;
+ gap:13px;
+ flex-wrap:wrap;
+ margin-top:32px;
+}
+
+.btn{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ border:0;
+ border-radius:99px;
+ padding:16px 27px;
+ font-size:14px;
+ font-weight:800;
+ cursor:pointer;
+ transition:.25s;
+ text-decoration:none;
+}
+
+.btn:hover{
+ transform:translateY(-4px);
+ box-shadow:0 12px 30px #081b2b55;
+}
+
+.primary{
+ background:linear-gradient(120deg,#ffe3b1,#ffc2ad);
+ color:#3b3030;
+}
+
+.ghost{
+ color:white;
+ background:#ffffff18;
+ border:1px solid #ffffff70;
+}
+
+.scroll-hint{
+ margin-top:70px;
+ font-size:11px;
+ letter-spacing:3px;
+}
+
+.scroll-hint b{
+ display:block;
+ font-size:25px;
+ margin-top:8px;
+}
+
+.section-label{
+ font-size:11px;
+ letter-spacing:3px;
+ text-transform:uppercase;
+ color:#ffd0b9;
+ font-weight:800;
+}
+
+h2{
+ font-size:clamp(37px,6vw,66px);
+ line-height:1.04;
+ margin:16px 0 18px;
+}
+
+.intro{
+ max-width:680px;
+ margin:auto;
+ color:#526b70;
+ line-height:1.85;
+ font-size:16px;
+}
+
+.paper{
+ position:relative;
+ background:#fffaf3;
+ color:#17313c;
+ border-radius:30px;
+ padding:clamp(28px,5vw,58px);
+ box-shadow:0 28px 80px #071b2b66;
+ overflow:hidden;
+}
+
+.paper .section-label{color:#b46f60}
+.paper h2{color:#193a46}
+
+.memory-grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:20px;
+ margin-top:42px;
+}
+
+.memory{
+ background:white;
+ border-radius:22px;
+ padding:16px 16px 24px;
+ box-shadow:0 8px 24px #26414a14;
+ transition:.25s;
+}
+
+.memory:hover{transform:translateY(-8px)}
+
+.photo{
+ height:230px;
+ border-radius:15px;
+ background-size:cover;
+ background-position:center;
+ margin-bottom:16px;
+}
+
+.photo.one{
+ background-image:url('https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&w=800&q=85');
+}
+
+.photo.two{
+ background-image:url('https://images.unsplash.com/photo-1483664852095-d6cc6870702d?auto=format&fit=crop&w=800&q=85');
+}
+
+.photo.three{
+ background-image:url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=85');
+}
+
+.memory h3{
+ font-size:24px;
+ margin:0 4px 7px;
+ color:#24434b;
+}
+
+.memory p{
+ font-size:13px;
+ line-height:1.65;
+ color:#607276;
+ margin:0 4px;
+}
+
+.ribbon{
+ margin-top:28px;
+ padding:26px;
+ border-radius:20px;
+ background:linear-gradient(110deg,#dcefed,#f8e7d9);
+ color:#31525a;
+ font-family:'Playfair Display',serif;
+ font-size:clamp(22px,3.5vw,34px);
+ text-align:center;
+}
+
+.adventure{
+ display:grid;
+ grid-template-columns:1fr .92fr;
+ gap:25px;
+ align-items:center;
+}
+
+.adventure-copy{padding:20px 5px}
+
+.adventure-copy p{
+ color:#e3efed;
+ line-height:1.9;
+ font-size:16px;
+}
+
+.adventure-image{
+ min-height:570px;
+ border-radius:28px;
+ background:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=90') center/cover;
+ box-shadow:0 25px 65px #06172277;
+ position:relative;
+}
+
+.adventure-image:after{
+ content:"winter looks good on you ✨";
+ position:absolute;
+ bottom:20px;
+ left:20px;
+ right:20px;
+ padding:17px;
+ border-radius:15px;
+ background:#132c3ac9;
+ text-align:center;
+ font-family:'Playfair Display',serif;
+ font-size:22px;
+}
+
+.mini-list{
+ display:grid;
+ gap:12px;
+ margin-top:22px;
+}
+
+.mini{
+ display:flex;
+ align-items:center;
+ gap:13px;
+ font-size:14px;
+}
+
+.mini i{
+ font-style:normal;
+ width:42px;
+ height:42px;
+ border-radius:50%;
+ display:grid;
+ place-items:center;
+ background:#ffffff20;
+ font-size:20px;
+}
+
+.invite{
+ max-width:850px;
+ margin:auto;
+ text-align:center;
+ padding:clamp(30px,6vw,65px);
+ border:1px solid #ffffff45;
+ border-radius:32px;
+ background:linear-gradient(145deg,#ffffff20,#ffffff0b);
+ backdrop-filter:blur(14px);
+}
+
+.invite h2{color:white}
+
+.invite p{
+ color:#e4efed;
+ line-height:1.85;
+}
+
+.invite .big{
+ font-family:'Playfair Display',serif;
+ font-size:clamp(26px,4vw,39px);
+ color:#ffe0cb;
+}
+
+#answer{
+ min-height:30px;
+ margin-top:20px;
+ color:#ffe4bf;
+ font-weight:700;
+ font-size:18px;
+}
+
+button:disabled{
+ opacity:.55;
+ cursor:not-allowed;
+ transform:none!important;
+ box-shadow:none!important;
+}
+
+footer{
+ text-align:center;
+ padding:40px 20px 55px;
+ color:#d5e6e4;
+ font-size:12px;
+}
+
+.snowflake{
+ position:fixed;
+ top:-25px;
+ z-index:4;
+ pointer-events:none;
+ color:white;
+ opacity:.7;
+ animation:drift linear infinite;
+}
+
+@keyframes drift{
+ to{
+  transform:translate3d(35px,110vh,0) rotate(240deg);
+  opacity:.12;
+ }
+}
+
+@media(max-width:760px){
+
+ nav{padding:20px}
+
+ .nav-note{font-size:9px}
+
+ section{padding:78px 17px}
+
+ .hero{min-height:100svh}
+
+ .memory-grid{grid-template-columns:1fr}
+
+ .photo{height:245px}
+
+ .adventure{grid-template-columns:1fr}
+
+ .adventure-image{
+  min-height:390px;
+  order:-1;
+ }
+
+ .actions .btn{width:100%}
+
+}
+
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{
+  scroll-behavior:auto!important;
+  animation:none!important;
+  transition:none!important;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+ <div class="brand">little winter wish <span>✦</span></div>
+ <div class="nav-note">A Murree invitation for Antel</div>
+</nav>
+
+<main>
+
+<section class="hero">
+ <div class="hero-inner">
+
+  <div class="stamp">❄️ A winter escape is waiting</div>
+
+  <h1>
+   Antel Hayat,<br>
+   <em>Murree is calling!</em>
+  </h1>
+
+  <p>
+   Snowy mountains, chilly weather, pretty views,
+   college friends and a whole trip full of fun.
+   Imagine the pictures, laughter and stories
+   you'll bring back. 🏔️
+  </p>
+
+  <div class="actions">
+   <a class="btn primary" href="#reasons">Let's imagine it ✨</a>
+   <a class="btn ghost" href="#invitation">One tiny request 💌</a>
+  </div>
+
+  <div class="scroll-hint">
+   A little winter magic awaits
+   <b>↓</b>
+  </div>
+
+ </div>
+</section>
+
+<section id="reasons">
+
+ <div class="paper">
+
+  <div class="section-label">A trip full of little joys</div>
+
+  <h2>Your Murree moodboard 📷</h2>
+
+  <p class="intro">
+   Antel, college tour ka apna hi maza hota hai.
+   Routine se break, doston ke saath hasi mazaak,
+   scenic views aur woh choti choti moments
+   jo favourite memories ban jate hain.
+  </p>
+
+  <div class="memory-grid">
+
+   <article class="memory">
+    <div class="photo one"></div>
+    <h3>Snowy vibes ❄️</h3>
+    <p>Thandi hawa, paharon ka view aur snowfall mil jaye toh kya hi baat hai!</p>
+   </article>
+
+   <article class="memory">
+    <div class="photo two"></div>
+    <h3>Cozy moments ☕</h3>
+    <p>Warm coffee, winter weather aur doston ke saath endless gup shup.</p>
+   </article>
+
+   <article class="memory">
+    <div class="photo three"></div>
+    <h3>Picture time 📸</h3>
+    <p>Pretty backgrounds, candid clicks aur bohat sari cute pictures.</p>
+   </article>
+
+  </div>
+
+  <div class="ribbon">
+   “Some days become memories before you even realise it.”
+  </div>
+
+ </div>
+
+</section>
+
+<section>
+
+ <div class="adventure">
+
+  <div class="adventure-copy">
+
+   <div class="section-label">This one's all about you ✨</div>
+
+   <h2>Your own little winter adventure</h2>
+
+   <p>
+    Antel, iss trip ko apne liye special banana.
+    Apni favourite pictures lena, Mall Road explore karna,
+    beautiful views enjoy karna aur friends ke saath
+    itna hansna ke wapas aa kar bhi smile aaye.
+   </p>
+
+   <div class="mini-list">
+
+    <div class="mini">
+     <i>📸</i>
+     Be the main character in every picture
+    </div>
+
+    <div class="mini">
+     <i>🧣</i>
+     Dress cute, stay warm, enjoy the weather
+    </div>
+
+    <div class="mini">
+     <i>🎡</i>
+     Explore, laugh and make lovely memories
+    </div>
+
+    <div class="mini">
+     <i>💙</i>
+     Give yourself a day to remember
+    </div>
+
+   </div>
+
+  </div>
+
+  <div class="adventure-image"></div>
+
+ </div>
+
+</section>
+
+<section>
+
+ <div class="paper">
+
+  <div class="section-label">Your Murree checklist ✨</div>
+
+  <h2>Little things that make a trip unforgettable</h2>
+
+  <p class="intro">
+   A good trip is made of simple things —
+   the people, the views, the unexpected laughs
+   and the photos you keep coming back to.
+  </p>
+
+  <div class="memory-grid">
+
+   <article class="memory">
+    <div class="photo three"></div>
+    <h3>Explore the views 🌲</h3>
+    <p>Take in the fresh mountain air and enjoy every beautiful corner.</p>
+   </article>
+
+   <article class="memory">
+    <div class="photo one"></div>
+    <h3>Capture the day 📷</h3>
+    <p>Take lots of pictures — especially candid ones with your friends.</p>
+   </article>
+
+   <article class="memory">
+    <div class="photo two"></div>
+    <h3>Enjoy the moment ☁️</h3>
+    <p>Keep your favourite snacks close, stay warm and have the best time.</p>
+   </article>
+
+  </div>
+
+  <div class="ribbon">
+   A little change of scenery can make a really lovely memory. 🤍
+  </div>
+
+ </div>
+
+</section>
+
+<section id="invitation">
+
+ <div class="invite">
+
+  <div class="section-label">A little request, Antel</div>
+
+  <h2>Don't miss your Murree adventure 🥹</h2>
+
+  <p class="big">
+   Go, enjoy every moment and make this trip yours! ❤️
+  </p>
+
+  <p>
+   Agar college permission de aur tumhara dil bhi ho,
+   toh zaroor jana. Friends ke saath full enjoy karna,
+   bohat sari pictures lena aur Murree ki beautiful
+   vibes miss mat karna.
+  </p>
+
+  <div class="actions">
+
+   <button class="btn primary" onclick="answer('Yesss! Murree, here I come! 🏔️❤️')">
+    Jao gi! ❤️🏔️
+   </button>
+
+   <button class="btn ghost" disabled aria-disabled="true">
+    Nahi jao gi 🙈
+   </button>
+
+  </div>
+
+  <div id="answer" aria-live="polite"></div>
+
+  <p style="font-size:12px;margin-top:18px">
+   P.S. The second button is just a joke. 🤍
+  </p>
+
+ </div>
+
+</section>
+
+</main>
+
+<footer>
+ Made to bring a little smile to your day ❄️
+</footer>
+
+<script>
+function answer(message){
+ document.getElementById("answer").textContent=message;
+}
+
+for(let i=0;i<26;i++){
+
+ const snow=document.createElement("span");
+
+ snow.className="snowflake";
+ snow.textContent="❄";
+
+ snow.style.left=Math.random()*100+"vw";
+ snow.style.fontSize=(9+Math.random()*14)+"px";
+ snow.style.animationDuration=(9+Math.random()*13)+"s";
+ snow.style.animationDelay=(-Math.random()*20)+"s";
+
+ document.body.appendChild(snow);
+}
+</script>
+
+</body>
+</html>
